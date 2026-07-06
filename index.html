@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella vista Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<style>
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color:#333;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0  20px;
+}
+
+.header{
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.logo{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom:0.2rem;
+
+}
+
+
+
+.logo tagline{
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.nav-links{
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration: none;
+    padding:0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+}
+
+.nav-links a:hover {
+    background-color: gray;
+}
+
+.hero{
+    height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("background cafe image.jpg");
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;  
+}
+
+.hero-content h2{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-button{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+}
+
+.btn{
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary{
+    background-color: orange;
+    color: white;
+
+}
+
+.btn-primary:hover{
+  background-color: orange;
+  transform: translate(-2px);
+}
+
+.btn-secondary{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover{
+    background-color:white;
+    color:black;
+
+}
+
+.menu {
+    padding:  5rem 0;
+    background-color: white;
+}
+
+.section-title{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color:#2c3e50; 
+}
+
+.section-subtitle{
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.menu-category{
+    margin-bottom: 3rem;
+
+}
+
+.menu-category h3{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color:#2c3e50;
+    border-bottom:  2px solid orangered;
+}
+
+.menu-items{
+    display: grid;
+    gap: 1.5rem;
+}
+.menu-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    margin-bottom:20px;
+}
+
+.menu-item:hover{
+    transform: translate(-3px);
+}
+
+.menu-item-info h4{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+
+}
+
+.menu-item-info p{
+    color: #666;
+    line-height: 1.4;
+}
+
+.price{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: orange;
+    margin-left: 1rem;
+}
+
+.about{
+    padding: 5rem 0;
+    background-color: white;
+
+}
+
+.about-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+
+
+}
+
+.about-text h3{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+.about-text p{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.about-image img{
+     width: 100%;
+     height: 400px;
+     object-fit: cover;
+     border-radius: 10px;
+     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.contact{
+    padding: 5rem 0;
+    background-color: white;
+
+}
+
+.contact-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+}
+
+.contact-info h2, .conatact-info h3{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.contact-item{
+    margin-bottom: 1rem;
+
+}
+
+.contact-item strong{
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.form-group{
+    margin-bottom: 1rem;
+
+}
+.form-group label{
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,.form-group select,.form-group textarea{
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid  gray;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+    outline: none;
+    border-color: orange;
+}
+
+.contact-button{
+    height: 50px;
+    background-color: orange;
+    color:white;
+    transition:all 0.3s ease ;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+
+.contact-button:hover{
+    background-color: rgb(52, 208, 213);
+    transform: translate(-3px);
+}
+
+@media (max-width: 768px)
+{
+    .hero-content  h2{
+        font-size: 2.5rem;
+        
+    }
+    .hero-button{
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn{
+        width: 80%;
+        text-align: center;
+
+    }
+
+    .about-content, .contact-content{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .nav-links{
+        gap: 1rem;
+    }
+}
+
+@media(max-width:480px)
+{
+    .hero-content h2{
+        font-size: 2rem;
+
+    }
+    .container{
+        padding: 0 15px;
+
+    }
+    .nav-links{
+        flex-direction: column;
+        gap: 0.5rem;
+     }
+}
+
+@keyframes fadeinup{
+    from{
+        opacity: 0;
+        transform: translatey(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translatey(20px);
+    }
+}
+
+@keyframes slideinleft
+{
+    from{
+        opacity: 0;
+        transform: translatex(-50px);
+
+    }
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+
+.hero-content{
+    animation: fadeinup 1s ease-out;
+}
+
+.menu-item{
+    animation: fadeinup 1s ease-out;
+    animation-fill-mode:both;
+}
+
+.menu-item:nth-child(1)
+{
+    animation-delay: 0.1s;
+}
+
+.menu-item:nth-child(2)
+{
+    animation-delay: 0.1s;
+}
+
+.menu-item:nth-child(3)
+{
+    animation-delay: 0.1s;
+}
+
+.about-image{
+    animation: fadeinup 0.8 ease 0.3s both;
+}
+
+.section-title{
+    opacity: 0;
+    transform: translatey(20px);
+    transition: all 0.6s ease;
+}
+
+.section-title.animate{
+    opacity: 1;
+    transform: translatey(0);
+}
+
+</style>
+<body>
+    <header class="header">
+          <div class="container">
+               <nav class="navbar">
+                <div class="logo">
+                    <h1>bell vista</h1>
+                    <span  class="tagline">Authentic  Italian Cuisine</span>
+                </div>
+                   <ul class="nav-links">
+                    <li><a href="home">home</a></li>
+                    <li><a href="Menu">Menu</a></li>
+                    <li><a href="About">About</a></li>
+                    <li><a href="Contact">Contact</a></li>
+                    
+                </ul>
+               </nav>
+          </div>
+    </header>
+
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome To Bella Vista </h2>
+                <p>Experience the authentic taste of italy in the heart of the city</p>
+                <div class="hero-button">
+                    <a href="#menu" class="btn btn-primary">View Menu</a>
+                    <a href="#contact" class="btn btn-secondary">Make Reservation</a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="menu" class="menu">
+            <div class="container">
+                <h2 class="section-title">Our Menu</h2>
+                <p class="section-subtitle">Discover our carefully crafted dishes.</p>
+                <div class="menu-categories">
+                    <div class="menu-category">
+                        <h3>Appetizer</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h4>Bruschetta Italliana</h4>
+                                    <p>fresh Tomatoes,basil, and Mozzarella</p>
+                                </div>
+                                <span class="price">$12</span>
+                            </div>
+                        </div>
+                         <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h4>Antipasto </h4>
+                                    <p>fresh Tomatoes,basil, and Mozzarella</p>
+                                </div>
+                                <span class="price">$12</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="about" class="about1">
+            <div class="container">
+                <h2 class="section-title">About  Bella vista</h2>
+                <div class="about-content">
+                    <div  class="about-text">
+                        <h3>Our story</h3>
+                        <p>At Brew Haven Café, we believe coffee is more than a drink — it’s an experience. Since 2018, we’ve been serving handcrafted beverages made from ethically sourced beans and freshly baked treats prepared daily.</p>
+                        <p>Whether you’re catching up with friends, working remotely, or simply enjoying a quiet moment, our warm and welcoming space is designed just for you.</p>
+                    </div>
+                    <div class="about-image">
+                    <img src="about.jpg" alt="restaurant Image"/>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+
+
+                <div class="contact-item">
+                    <strong>Address:</strong>
+                    <p>123 Italian Street,city Center</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <p>info@bellavista.com</p>
+                </div>
+                
+            </div>
+            <div class="contact-form">
+                <h3>Make A Reservation</h3>
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                    </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                    </div>
+                      <div class="form-group">
+                        <label for="phone">Phone No:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        
+                    </div>
+                      <div class="form-group">
+                        <label for="date">Reservation Date:</label>
+                        <input type="date" id="date" name="date" required>
+                        
+                    </div>
+                      <div class="form-group">
+                        <label for="time">time:</label>
+                        <select name="time" id="time" required>
+                            <option value="">select time</option>
+                            <option value="18:00">6:00</option>
+                            <option value="19:00">7:00</option>
+                            <option value="20:00">8:00</option>
+                            <option value="21:00">9:00</option>
+                        </select>
+                     </div>
+                        
+                   <div class="form-group">
+                        <label for="guest">Number:</label>
+                        <select name="guest" id="guest" required>
+                            <option value="">select time</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                      <div class="form-group">
+                        <label for="message">Special Request:</label>
+                        <textarea name="message" id="message" rows="4" ></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-button">Submit Reservation</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    </main>
+    
+</body>
+</html>
